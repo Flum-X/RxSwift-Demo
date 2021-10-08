@@ -48,6 +48,11 @@ class SimpleValidationViewController : ViewController {
         self.present(alertCtr, animated: true, completion: nil)
     }
 
+    @IBAction func gotoCatalogPage() {
+        
+        let vc = CataLogViewCtrl()
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 class SimpleValidationViewModel {
