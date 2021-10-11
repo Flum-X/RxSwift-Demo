@@ -6,8 +6,6 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import RxSwift
-
 #if os(iOS)
     import UIKit
     typealias OSViewController = UIViewController

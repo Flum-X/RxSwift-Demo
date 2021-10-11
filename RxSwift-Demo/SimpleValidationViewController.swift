@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 private let minimalUsernameLength = 6
 private let minimalPasswordLength = 8
@@ -50,7 +48,8 @@ class SimpleValidationViewController : ViewController {
 
     @IBAction func gotoCatalogPage() {
         
-        let vc = CataLogViewCtrl()
+        let vc = UINavigationController(rootViewController: HomePageViewCtrl())
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
 }
