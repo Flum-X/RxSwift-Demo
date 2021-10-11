@@ -19,6 +19,7 @@
 		846C1B3A271007E8001B9B03 /* CataLogViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */; };
 		8481774B2714122C008E7DE5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774A2714122C008E7DE5 /* Constant.swift */; };
 		8481774E27141660008E7DE5 /* HomePageViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774D27141660008E7DE5 /* HomePageViewCtrl.swift */; };
+		8481775027142489008E7DE5 /* ObservableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774F27142489008E7DE5 /* ObservableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CataLogViewCtrl.swift; sourceTree = "<group>"; };
 		8481774A2714122C008E7DE5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8481774D27141660008E7DE5 /* HomePageViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewCtrl.swift; sourceTree = "<group>"; };
+		8481774F27142489008E7DE5 /* ObservableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableVC.swift; sourceTree = "<group>"; };
 		A913C6549CF8C6EE18E8488E /* Pods-RxSwift-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift-Demo/Pods-RxSwift-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		E291D55E9907FA2647D5A6B1 /* Pods-RxSwift-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift-Demo/Pods-RxSwift-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F66F697630835670AE997301 /* Pods_RxSwift_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,8 +80,9 @@
 				2006112524850B2900F8F9CB /* ViewController.swift */,
 				2042E57824701EA3007CE31C /* SimpleValidation.storyboard */,
 				2042E57724701EA3007CE31C /* SimpleValidationViewController.swift */,
-				846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */,
 				8481774D27141660008E7DE5 /* HomePageViewCtrl.swift */,
+				846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */,
+				8481774F27142489008E7DE5 /* ObservableVC.swift */,
 				8481774C2714159B008E7DE5 /* Supporting */,
 				2039A2D6246ED782005C4259 /* Assets.xcassets */,
 				2039A2DB246ED782005C4259 /* LaunchScreen.storyboard */,
@@ -254,6 +257,7 @@
 				2006112624850B2900F8F9CB /* ViewController.swift in Sources */,
 				846C1B3A271007E8001B9B03 /* CataLogViewCtrl.swift in Sources */,
 				2039A2D1246ED781005C4259 /* AppDelegate.swift in Sources */,
+				8481775027142489008E7DE5 /* ObservableVC.swift in Sources */,
 				2039A2D3246ED781005C4259 /* SceneDelegate.swift in Sources */,
 				2042E57924701EA3007CE31C /* SimpleValidationViewController.swift in Sources */,
 				8481774E27141660008E7DE5 /* HomePageViewCtrl.swift in Sources */,

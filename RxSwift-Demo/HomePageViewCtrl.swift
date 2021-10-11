@@ -9,9 +9,14 @@
 import UIKit
 
 struct DataModel {
-    let data = Observable.just([
+    
+    let datas = [
         "tableView+Rx",
-    ])
+        "Observable"
+    ]
+    let dataObservable = Observable.just(["tableView+Rx",
+                                          "Observable"
+                                         ])
 }
 
 class HomePageViewCtrl: UIViewController {
@@ -29,15 +34,23 @@ class HomePageViewCtrl: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HomeCell")
         
         //将数据源绑定到tableView上
-        viewModel.data.bind(to: tableView.rx.items(cellIdentifier: "HomeCell")) { _, text, cell in
+        viewModel.dataObservable.bind(to: tableView.rx.items(cellIdentifier: "HomeCell")) { _, text, cell in
             cell.textLabel?.text = text
         }.disposed(by: disposeBag)
         
         //tableView点击响应
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let self = self else {
+                return
+            }
             if indexPath.row == 0 {
                 let vc = CataLogViewCtrl()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                vc.title = self.viewModel.datas[indexPath.row]
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 1 {
+                let vc = ObservableVC()
+                vc.title = self.viewModel.datas[indexPath.row]
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }).disposed(by: disposeBag)
     }
