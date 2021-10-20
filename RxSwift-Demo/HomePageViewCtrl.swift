@@ -12,10 +12,12 @@ struct DataModel {
     
     let datas = [
         "tableView+Rx",
-        "Observable"
+        "Observable",
+        "CustomBindProperty"
     ]
     let dataObservable = Observable.just(["tableView+Rx",
-                                          "Observable"
+                                          "Observable",
+                                          "CustomBindProperty"
                                          ])
 }
 
@@ -49,6 +51,10 @@ class HomePageViewCtrl: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if indexPath.row == 1 {
                 let vc = ObservableVC()
+                vc.title = self.viewModel.datas[indexPath.row]
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 2 {
+                let vc = CustomBindPropertyVC()
                 vc.title = self.viewModel.datas[indexPath.row]
                 self.navigationController?.pushViewController(vc, animated: true)
             }

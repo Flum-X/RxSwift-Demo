@@ -9,6 +9,7 @@
 /// 全局引入第三方库
 @ _exported import RxSwift
 @ _exported import RxCocoa
+@ _exported import SnapKit
 
 /// 自定义Log打印
 ///
