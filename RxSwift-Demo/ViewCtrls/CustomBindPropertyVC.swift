@@ -37,7 +37,7 @@ class CustomBindPropertyVC: UIViewController {
 
     private func bindEvent() {
         
-        let observable = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
+        let observable = Observable<Int>.interval(.milliseconds(500), scheduler: MainScheduler.instance)
         observable.map { CGFloat($0) }
         .bind(to: contentLb.rx.fontSize)
         .disposed(by: disposeBag)
