@@ -17,13 +17,13 @@ class SubjectsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        testPublishSubject()
+//        testPublishSubject()
         
         testBehaviorSubject()
         
-        testReplaySubject()
-        
-        testBehaviorRelay()
+//        testReplaySubject()
+//
+//        testBehaviorRelay()
     }
     
     /**
