@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxSwift
 import RxRelay
 
 class OperatorsVC: UIViewController {
