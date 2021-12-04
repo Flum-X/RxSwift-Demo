@@ -17,6 +17,13 @@ struct DataModel {
         "Subjects",
         "Operators"
     ]
+    let vcArray = [
+        "CataLogViewCtrl",
+        "ObservableVC",
+        "CustomBindPropertyVC",
+        "SubjectsVC",
+        "OperatorsVC"
+    ]
     let dataObservable = Observable.just(["tableView+Rx",
                                           "Observable",
                                           "CustomBindProperty",
@@ -49,24 +56,8 @@ class HomePageViewCtrl: UIViewController {
             guard let self = self else {
                 return
             }
-            if indexPath.row == 0 {
-                let vc = CataLogViewCtrl()
-                vc.title = self.viewModel.datas[indexPath.row]
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else if indexPath.row == 1 {
-                let vc = ObservableVC()
-                vc.title = self.viewModel.datas[indexPath.row]
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else if indexPath.row == 2 {
-                let vc = CustomBindPropertyVC()
-                vc.title = self.viewModel.datas[indexPath.row]
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else if indexPath.row == 3 {
-                let vc = SubjectsVC()
-                vc.title = self.viewModel.datas[indexPath.row]
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else if indexPath.row == 4 {
-                let vc = OperatorsVC()
+            if let type = NSClassFromString(self.viewModel.vcArray[indexPath.row]) as? UIViewController.Type {
+                let vc = type.init()
                 vc.title = self.viewModel.datas[indexPath.row]
                 self.navigationController?.pushViewController(vc, animated: true)
             }
