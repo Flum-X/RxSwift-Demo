@@ -10,20 +10,14 @@ import UIKit
 
 struct DataModel {
     
-    let datas = [
-        "tableView+Rx",
-        "Observable",
-        "CustomBindProperty",
-        "Subjects",
-        "Operators"
+    var datas = [
+        ("tableView+Rx", "CataLogViewCtrl"),
+        ("Observable", "ObservableVC"),
+        ("CustomBindProperty", "CustomBindPropertyVC"),
+        ("Subjects", "SubjectsVC"),
+        ("Operators", "OperatorsVC")
     ]
-    let vcArray = [
-        "CataLogViewCtrl",
-        "ObservableVC",
-        "CustomBindPropertyVC",
-        "SubjectsVC",
-        "OperatorsVC"
-    ]
+
     let dataObservable = Observable.just(["tableView+Rx",
                                           "Observable",
                                           "CustomBindProperty",
@@ -56,9 +50,9 @@ class HomePageViewCtrl: UIViewController {
             guard let self = self else {
                 return
             }
-            if let type = NSClassFromString(self.viewModel.vcArray[indexPath.row]) as? UIViewController.Type {
+            if let type = NSClassFromString(self.viewModel.datas[indexPath.row].1) as? UIViewController.Type {
                 let vc = type.init()
-                vc.title = self.viewModel.datas[indexPath.row]
+                vc.title = self.viewModel.datas[indexPath.row].0
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }).disposed(by: disposeBag)
