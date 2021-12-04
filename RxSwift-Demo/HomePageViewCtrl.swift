@@ -8,9 +8,10 @@
 
 import UIKit
 
+/// 数据源
 struct DataModel {
     
-    var datas = [
+    var datas = [//(行title, 点击跳转类名)
         ("tableView+Rx", "CataLogViewCtrl"),
         ("Observable", "ObservableVC"),
         ("CustomBindProperty", "CustomBindPropertyVC"),
@@ -50,9 +51,11 @@ class HomePageViewCtrl: UIViewController {
             guard let self = self else {
                 return
             }
-            if let type = NSClassFromString(self.viewModel.datas[indexPath.row].1) as? UIViewController.Type {
+            let data = self.viewModel.datas[indexPath.row]
+            if let type =
+                NSClassFromString(data.1) as? UIViewController.Type {
                 let vc = type.init()
-                vc.title = self.viewModel.datas[indexPath.row].0
+                vc.title = data.0
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }).disposed(by: disposeBag)
