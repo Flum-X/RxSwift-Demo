@@ -53,9 +53,6 @@
                                 <state key="disabled">
                                     <color key="titleColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="gotoCatalogPage" destination="hFV-LH-THc" eventType="touchUpInside" id="yah-wv-upO"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 or more characters are needed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGP-gu-Gxt">
                                 <rect key="frame" x="20" y="195.5" width="374" height="20.5"/>

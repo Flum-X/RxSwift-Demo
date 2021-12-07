@@ -8,16 +8,13 @@
 
 import UIKit
 
-class ObservableVC: UIViewController {
-
-    let disposeBag = DisposeBag()
+class ObservableVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-//        subscribeTest1()
-//        subscribeTest2()
+        subscribeTest1()
+        subscribeTest2()
         observeLifeCycle()
     }
     

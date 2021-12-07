@@ -16,22 +16,28 @@ struct DataModel {
         ("Observable", "ObservableVC"),
         ("CustomBindProperty", "CustomBindPropertyVC"),
         ("Subjects", "SubjectsVC"),
-        ("Operators", "OperatorsVC")
+        ("Operators", "CommonOperatorsVC"),
+        ("FilterOperators", "FilterOperatorsVC"),
+        ("ConditionalOperators", "ConditionalOperatorsVC"),
+        ("CombineOperators", "CombineOperatorsVC")
     ]
 
     let dataObservable = Observable.just(["tableView+Rx",
                                           "Observable",
                                           "CustomBindProperty",
                                           "Subjects",
-                                          "Operators"
+                                          "Operators",
+                                          "FilterOperators",
+                                          "ConditionalOperators",
+                                          "CombineOperators"
                                          ])
 }
 
-class HomePageViewCtrl: UIViewController {
+class HomePageViewCtrl: ViewController {
 
     var tableView: UITableView!
     var viewModel = DataModel()
-    let disposeBag = DisposeBag()
+    private let cellID = "HomeCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +45,10 @@ class HomePageViewCtrl: UIViewController {
         title = "HomePage"
         tableView = UITableView(frame: view.bounds)
         view.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HomeCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
         //将数据源绑定到tableView上
-        viewModel.dataObservable.bind(to: tableView.rx.items(cellIdentifier: "HomeCell")) { _, text, cell in
+        viewModel.dataObservable.bind(to: tableView.rx.items(cellIdentifier: cellID)) { _, text, cell in
             cell.textLabel?.text = text
         }.disposed(by: disposeBag)
         
@@ -52,9 +58,8 @@ class HomePageViewCtrl: UIViewController {
                 return
             }
             let data = self.viewModel.datas[indexPath.row]
-            if let type =
-                NSClassFromString(data.1) as? UIViewController.Type {
-                let vc = type.init()
+            if let vc =
+                self.getVCInstance(stringName: data.1) {
                 vc.title = data.0
                 self.navigationController?.pushViewController(vc, animated: true)
             }

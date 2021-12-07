@@ -9,28 +9,25 @@
 import UIKit
 import RxRelay
 
-class OperatorsVC: UIViewController {
-
-    let disposeBag = DisposeBag()
+class CommonOperatorsVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-//        bufferTest()
-//        windowTest()
-//        mapTest()
-//        flatMapTest()
-//        flatMapLatestTest()
-//        flatMapFirstTest()
-//        concatMapTest()
-//        scanTest()
+        bufferTest()
+        windowTest()
+        mapTest()
+        flatMapTest()
+        flatMapLatestTest()
+        flatMapFirstTest()
+        concatMapTest()
+        scanTest()
         groupByTest()
     }
 
 }
 
-extension OperatorsVC {
+extension CommonOperatorsVC {
     
     //MARK: buffer
     /// buffer 方法作用是缓冲组合，第一个参数是缓冲时间，第二个参数是缓冲个数，第三个参数是线程

@@ -34,23 +34,22 @@ class SimpleValidationViewController : ViewController {
         viewModel.allValid.bind(to: doSomethingOutlet.rx.isEnabled).disposed(by: disposeBag)
         
         doSomethingOutlet.rx.tap.subscribe(onNext: { [weak self] in
-            self?.showAlert()
+            self?.gotoHomePage()
             }).disposed(by: disposeBag)
     }
 
-    func showAlert() {
-        
-        let alertCtr = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
-        alertCtr.addAction(cancelAction)
-        self.present(alertCtr, animated: true, completion: nil)
-    }
+//    func showAlert() {
+//        
+//        let alertCtr = UIAlertController(title: "RxExample", message: "This is wonderful", preferredStyle: .alert)
+//        let cancelAction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
+//        alertCtr.addAction(cancelAction)
+//        self.present(alertCtr, animated: true, completion: nil)
+//    }
 
-    @IBAction func gotoCatalogPage() {
+    func gotoHomePage() {
         
         let vc = UINavigationController(rootViewController: HomePageViewCtrl())
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        AppDelegate.shared()?.setRootViewCtrl(vc)
     }
 }
 

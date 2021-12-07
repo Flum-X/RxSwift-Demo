@@ -8,23 +8,21 @@
 
 import UIKit
 
-class SubjectsVC: UIViewController {
-
-    private let disposeBag = DisposeBag()
+class SubjectsVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-//        testPublishSubject()
+        testPublishSubject()
         
         testBehaviorSubject()
         
-//        testReplaySubject()
-//
-//        testBehaviorRelay()
+        testReplaySubject()
+
+        testBehaviorRelay()
     }
     
+    //MARK: PublishSubject
     /**
      *PublishSubject 是最普通的 Subject，它不需要初始值就能创建
      *PublishSubject 的订阅者从他们开始订阅的时间点起，可以收到订阅后 Subject 发出的新 Event，而不会收到他们在订阅前已发出的Event
@@ -70,6 +68,7 @@ class SubjectsVC: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    //MARK: BehaviorSubject
     /**
      *BehaviorSubject 需要通过一个默认初始值来创建
      *当一个订阅者来订阅它的时候，这个订阅者会立即收到 BehaviorSubjects 上一个发出的 event。之后就跟正常的情况一样，它也会接收到 BehaviorSubject 之后发出的新的 event
@@ -96,6 +95,7 @@ class SubjectsVC: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    //MARK: ReplaySubject
     /**
      *ReplaySubject 在创建时候需要设置一个 bufferSize，表示它对于它发送过的 event 的缓存个数
      *比如一个 ReplaySubject 的 bufferSize 设置为 2，它发出了 3 个 .next 的 event，那么它会将后两个（最近的两个）event 给缓存起来。此时如果有一个 subscriber 订阅了这个 ReplaySubject，那么这个 subscriber 就会立即收到前面缓存的两个 .next 的 event
@@ -133,6 +133,7 @@ class SubjectsVC: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    //MARK: BehaviorRelay
     /**
      *BehaviorRelay 是作为 Variable 的替代者出现的。它的本质其实也是对 BehaviorSubject 的封装，所以它也必须要通过一个默认的初始值进行创建
      *BehaviorRelay 具有 BehaviorSubject 的功能，能够向它的订阅者发出上一个 event 以及之后新创建的 event

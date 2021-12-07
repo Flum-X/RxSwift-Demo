@@ -10,9 +10,7 @@ import UIKit
 import RxSwift
 import CoreLocation
 
-class ConditionalOperatorsVC: UIViewController {
-
-    private let disposeBag = DisposeBag()
+class ConditionalOperatorsVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -33,11 +33,10 @@ struct MusicListViewModel {
     ])
 }
 
-class CataLogViewCtrl: UIViewController {
+class CataLogViewCtrl: ViewController {
 
     var tableView: UITableView!
     var viewModel = MusicListViewModel()
-    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

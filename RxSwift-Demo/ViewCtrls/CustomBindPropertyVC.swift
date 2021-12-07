@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CustomBindPropertyVC: UIViewController {
+class CustomBindPropertyVC: ViewController {
 
     private var contentLb: UILabel!
-    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,6 @@ class CustomBindPropertyVC: UIViewController {
     
     
     private func initUI() {
-        view.backgroundColor = .white
         contentLb = UILabel()
         contentLb.textColor = .black
         contentLb.textAlignment = .center

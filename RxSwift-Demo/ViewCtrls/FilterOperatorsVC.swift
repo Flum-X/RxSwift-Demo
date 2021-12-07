@@ -8,9 +8,7 @@
 
 import UIKit
 
-class FilterOperatorsVC: UIViewController {
-
-    let disposeBag = DisposeBag()
+class FilterOperatorsVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
