@@ -19,7 +19,8 @@ struct DataModel {
         ("Operators", "CommonOperatorsVC"),
         ("FilterOperators", "FilterOperatorsVC"),
         ("ConditionalOperators", "ConditionalOperatorsVC"),
-        ("CombineOperators", "CombineOperatorsVC")
+        ("CombineOperators", "CombineOperatorsVC"),
+        ("PolymericOperators", "PolymericOperatorsVC")
     ]
 
     let dataObservable = Observable.just(["tableView+Rx",
@@ -29,7 +30,8 @@ struct DataModel {
                                           "Operators",
                                           "FilterOperators",
                                           "ConditionalOperators",
-                                          "CombineOperators"
+                                          "CombineOperators",
+                                          "PolymericOperators"
                                          ])
 }
 

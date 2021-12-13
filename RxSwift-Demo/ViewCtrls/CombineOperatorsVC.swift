@@ -61,6 +61,7 @@ class CombineOperatorsVC: ViewController {
     
     //MARK: merge
     /// 该方法可以将多个（两个或两个以上的）Observable 序列合并成一个 Observable 序列
+    /// 当某一个 Observable 发出一个元素时，他就将这个元素发出
     private func mergeTest() {
         
         let disposeBag = DisposeBag()
