@@ -23,6 +23,7 @@
 		846A95B42721153E00316F36 /* SubjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A95B32721153E00316F36 /* SubjectsVC.swift */; };
 		846C1B3A271007E8001B9B03 /* CataLogViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */; };
 		847845BC276722C700091A0C /* PolymericOperatorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847845BB276722C700091A0C /* PolymericOperatorsVC.swift */; };
+		847AFA3127689CA000CD2949 /* ConnectOperatorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AFA3027689CA000CD2949 /* ConnectOperatorsVC.swift */; };
 		8481774B2714122C008E7DE5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774A2714122C008E7DE5 /* Constant.swift */; };
 		8481774E27141660008E7DE5 /* HomePageViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774D27141660008E7DE5 /* HomePageViewCtrl.swift */; };
 		8481775027142489008E7DE5 /* ObservableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481774F27142489008E7DE5 /* ObservableVC.swift */; };
@@ -47,6 +48,7 @@
 		846A95B32721153E00316F36 /* SubjectsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsVC.swift; sourceTree = "<group>"; };
 		846C1B39271007E8001B9B03 /* CataLogViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CataLogViewCtrl.swift; sourceTree = "<group>"; };
 		847845BB276722C700091A0C /* PolymericOperatorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolymericOperatorsVC.swift; sourceTree = "<group>"; };
+		847AFA3027689CA000CD2949 /* ConnectOperatorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOperatorsVC.swift; sourceTree = "<group>"; };
 		8481774A2714122C008E7DE5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8481774D27141660008E7DE5 /* HomePageViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewCtrl.swift; sourceTree = "<group>"; };
 		8481774F27142489008E7DE5 /* ObservableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableVC.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				844F90E32756046D00C9BBA8 /* ConditionalOperatorsVC.swift */,
 				84294630275F094A00249D8C /* CombineOperatorsVC.swift */,
 				847845BB276722C700091A0C /* PolymericOperatorsVC.swift */,
+				847AFA3027689CA000CD2949 /* ConnectOperatorsVC.swift */,
 			);
 			path = ViewCtrls;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				846C1B3A271007E8001B9B03 /* CataLogViewCtrl.swift in Sources */,
 				2039A2D1246ED781005C4259 /* AppDelegate.swift in Sources */,
 				8481775027142489008E7DE5 /* ObservableVC.swift in Sources */,
+				847AFA3127689CA000CD2949 /* ConnectOperatorsVC.swift in Sources */,
 				846A95B42721153E00316F36 /* SubjectsVC.swift in Sources */,
 				847845BC276722C700091A0C /* PolymericOperatorsVC.swift in Sources */,
 				845BB22027290BD6005C8A99 /* OperatorsVC.swift in Sources */,
