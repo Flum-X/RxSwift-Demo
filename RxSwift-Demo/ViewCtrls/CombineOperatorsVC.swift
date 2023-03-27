@@ -48,14 +48,14 @@ class CombineOperatorsVC: ViewController {
         
         Observable.of("2", "3")
             .startWith("1")
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         Observable.of("2", "3")
             .startWith("a")
             .startWith("b")
             .startWith("c")
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -71,7 +71,7 @@ class CombineOperatorsVC: ViewController {
          
         Observable.of(subject1, subject2)
             .merge()
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject1.onNext(20)
@@ -96,7 +96,7 @@ class CombineOperatorsVC: ViewController {
         Observable.zip(subject1, subject2) {
             "\($0)\($1)"
             }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject1.onNext(1)
@@ -147,7 +147,7 @@ class CombineOperatorsVC: ViewController {
         Observable.combineLatest(subject1, subject2) {
             "\($0)\($1)"
             }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject1.onNext(1)
@@ -171,7 +171,7 @@ class CombineOperatorsVC: ViewController {
         let subject2 = PublishSubject<String>()
          
         subject1.withLatestFrom(subject2)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject1.onNext("A")
@@ -196,7 +196,7 @@ class CombineOperatorsVC: ViewController {
          
         variable.asObservable()
             .switchLatest()
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject1.onNext("B")

@@ -38,7 +38,7 @@ extension CommonOperatorsVC {
         
         subject
             .buffer(timeSpan: .seconds(1), count: 3, scheduler: MainScheduler.instance)
-            .subscribe(onNext:{ print($0) })
+            .subscribe(onNext:{ DLog($0) })
             .disposed(by: disposeBag)
         
         subject.onNext("a")
@@ -62,10 +62,10 @@ extension CommonOperatorsVC {
         subject
             .window(timeSpan: .seconds(1), count: 3, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                print("subscribe: \($0)")
+                DLog("subscribe: \($0)")
                 $0.asObservable()
                     .subscribe(onNext: {
-                        print($0)
+                        DLog($0)
                     }).disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
@@ -87,7 +87,7 @@ extension CommonOperatorsVC {
         
         Observable.of(1, 2, 3)
             .map { $0 * 10 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -104,7 +104,7 @@ extension CommonOperatorsVC {
         
         relay.asObservable()
             .flatMap { $0 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         subject1.onNext("B")
@@ -124,7 +124,7 @@ extension CommonOperatorsVC {
         
         relay.asObservable()
             .flatMapLatest { $0 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         subject1.onNext("B")
@@ -144,7 +144,7 @@ extension CommonOperatorsVC {
         
         relay.asObservable()
             .flatMapFirst { $0 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         subject1.onNext("B")
@@ -164,7 +164,7 @@ extension CommonOperatorsVC {
         
         relay.asObservable()
             .concatMap { $0 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         subject1.onNext("B")
@@ -184,7 +184,7 @@ extension CommonOperatorsVC {
             .scan(0) { acum, elem in
                 acum + elem
             }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -201,10 +201,10 @@ extension CommonOperatorsVC {
                 switch event {
                 case .next(let group):
                     group.asObservable().subscribe({ event in
-                        print("key: \(group.key) event: \(event)")
+                        DLog("key: \(group.key) event: \(event)")
                     }).disposed(by: self!.disposeBag)
                 default:
-                    print("")
+                    DLog("")
                 }
             }
             .disposed(by: disposeBag)

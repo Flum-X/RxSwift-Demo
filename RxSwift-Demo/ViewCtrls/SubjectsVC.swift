@@ -36,9 +36,9 @@ class SubjectsVC: ViewController {
         
         //第1次订阅subject
         subject.subscribe { string in
-            print("第1次订阅：", string)
+            DLog("第1次订阅：", string)
         } onCompleted: {
-            print("第1次订阅：onCompleted")
+            DLog("第1次订阅：onCompleted")
         }.disposed(by: disposeBag)
 
         //当前有1个订阅，则该信息会输出到控制台
@@ -46,9 +46,9 @@ class SubjectsVC: ViewController {
         
         //第2次订阅subject
         subject.subscribe { string in
-            print("第2次订阅：", string)
+            DLog("第2次订阅：", string)
         } onCompleted: {
-            print("第2次订阅：onCompleted")
+            DLog("第2次订阅：onCompleted")
         }.disposed(by: disposeBag)
         
         //当前有2个订阅，则该信息会输出到控制台
@@ -62,9 +62,9 @@ class SubjectsVC: ViewController {
         
         //subject完成后它的所有订阅（包括结束后的订阅），都能收到subject的.completed事件
         subject.subscribe { string in
-            print("第3次订阅：", string)
+            DLog("第3次订阅：", string)
         } onCompleted: {
-            print("第3次订阅：onCompleted")
+            DLog("第3次订阅：onCompleted")
         }.disposed(by: disposeBag)
     }
     
@@ -80,7 +80,7 @@ class SubjectsVC: ViewController {
         
         //第1次订阅subject
         subject.subscribe { event in
-            print("第1次订阅：", event)
+            DLog("第1次订阅：", event)
         }.disposed(by: disposeBag)
         
         //发送next事件
@@ -91,7 +91,7 @@ class SubjectsVC: ViewController {
         
         //第2次订阅subject
         subject.subscribe { event in
-            print("第2次订阅：", event)
+            DLog("第2次订阅：", event)
         }.disposed(by: disposeBag)
     }
     
@@ -113,7 +113,7 @@ class SubjectsVC: ViewController {
          
         //第1次订阅subject
         subject.subscribe { event in
-            print("第1次订阅：", event)
+            DLog("第1次订阅：", event)
         }.disposed(by: disposeBag)
          
         //再发送1个next事件
@@ -121,7 +121,7 @@ class SubjectsVC: ViewController {
          
         //第2次订阅subject
         subject.subscribe { event in
-            print("第2次订阅：", event)
+            DLog("第2次订阅：", event)
         }.disposed(by: disposeBag)
          
         //让subject结束
@@ -129,7 +129,7 @@ class SubjectsVC: ViewController {
          
         //第3次订阅subject
         subject.subscribe { event in
-            print("第3次订阅：", event)
+            DLog("第3次订阅：", event)
         }.disposed(by: disposeBag)
     }
     
@@ -150,7 +150,7 @@ class SubjectsVC: ViewController {
         
         //第1次订阅
         subject.asObservable().subscribe {
-            print("第1次订阅：", $0)
+            DLog("第1次订阅：", $0)
         }.disposed(by: disposeBag)
         
         //修改value值
@@ -158,7 +158,7 @@ class SubjectsVC: ViewController {
         
         //第2次订阅
         subject.asObservable().subscribe {
-            print("第2次订阅：", $0)
+            DLog("第2次订阅：", $0)
         }.disposed(by: disposeBag)
         
         //修改value值

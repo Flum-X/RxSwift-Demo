@@ -32,7 +32,7 @@ class ConnectOperatorsVC: ViewController {
             .publish()
         
         //第一个订阅者（立刻开始订阅）
-        _ = interval.subscribe(onNext: {print("订阅1: \($0)")})
+        _ = interval.subscribe(onNext: {DLog("订阅1: \($0)")})
         
         //相当于把事件消息推迟了两秒
         delay(2) {
@@ -41,7 +41,7 @@ class ConnectOperatorsVC: ViewController {
         
         //第二个订阅者（延迟5秒开始订阅）
         delay(5) {
-            _ = interval.subscribe(onNext: {print("订阅2: \($0)")})
+            _ = interval.subscribe(onNext: {DLog("订阅2: \($0)")})
         }
         
     }
@@ -55,7 +55,7 @@ class ConnectOperatorsVC: ViewController {
             .replay(5)
         
         //第一个订阅者（立刻开始订阅）
-        _ = interval.subscribe(onNext: {print("订阅1: \($0)")})
+        _ = interval.subscribe(onNext: {DLog("订阅1: \($0)")})
         
         //相当于把事件消息推迟了两秒
         delay(2) {
@@ -64,7 +64,7 @@ class ConnectOperatorsVC: ViewController {
         
         //第二个订阅者（延迟5秒开始订阅）
         delay(5) {
-            _ = interval.subscribe(onNext: {print("订阅2: \($0)")})
+            _ = interval.subscribe(onNext: {DLog("订阅2: \($0)")})
         }
     }
     
@@ -76,14 +76,14 @@ class ConnectOperatorsVC: ViewController {
         let subject = PublishSubject<Int>()
         
         _ = subject
-            .subscribe(onNext: { print("Subject: \($0)") })
+            .subscribe(onNext: { DLog("Subject: \($0)") })
         
         //每隔1秒钟发送1个事件
         let interval = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
             .multicast(subject)
         
         //第一个订阅者（立刻开始订阅）
-        _ = interval.subscribe(onNext: {print("订阅1: \($0)")})
+        _ = interval.subscribe(onNext: {DLog("订阅1: \($0)")})
         
         //相当于把事件消息推迟了两秒
         delay(2) {
@@ -92,7 +92,7 @@ class ConnectOperatorsVC: ViewController {
         
         //第二个订阅者（延迟5秒开始订阅）
         delay(5) {
-            _ = interval.subscribe(onNext: {print("订阅2: \($0)")})
+            _ = interval.subscribe(onNext: {DLog("订阅2: \($0)")})
         }
     }
     
@@ -108,12 +108,12 @@ class ConnectOperatorsVC: ViewController {
          
         //第一个订阅者（立刻开始订阅）
         _ = interval
-            .subscribe(onNext: { print("订阅1: \($0)") })
+            .subscribe(onNext: { DLog("订阅1: \($0)") })
          
         //第二个订阅者（延迟5秒开始订阅）
         delay(5) {
             _ = interval
-                .subscribe(onNext: { print("订阅2: \($0)") })
+                .subscribe(onNext: { DLog("订阅2: \($0)") })
         }
     }
     
@@ -128,12 +128,12 @@ class ConnectOperatorsVC: ViewController {
         
         //第一个订阅者（立刻开始订阅）
         _ = interval
-            .subscribe(onNext: { print("订阅1: \($0)") })
+            .subscribe(onNext: { DLog("订阅1: \($0)") })
         
         //第二个订阅者（延迟5秒开始订阅）
         delay(5) {
             _ = interval
-                .subscribe(onNext: { print("订阅2: \($0)") })
+                .subscribe(onNext: { DLog("订阅2: \($0)") })
         }
     }
     

@@ -21,12 +21,11 @@ DEPENDENCIES:
   - SnapKit (= 5.0.1)
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  trunk:
+    - Alamofire
     - RxAlamofire
     - RxCocoa
     - RxRelay
-  trunk:
-    - Alamofire
     - RxSwift
     - SnapKit
 
@@ -40,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0907d808d5e91609e59fdf235cc839592fd86e6f
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3

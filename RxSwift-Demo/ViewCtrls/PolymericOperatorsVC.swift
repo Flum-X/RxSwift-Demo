@@ -24,7 +24,7 @@ class PolymericOperatorsVC: ViewController {
         
         Observable.of(1, 2, 3)
             .toArray()
-            .subscribe({ print($0) })
+            .subscribe({ DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -35,7 +35,7 @@ class PolymericOperatorsVC: ViewController {
         
         Observable.of(1, 2, 3, 4, 5)
             .reduce(0, accumulator: +)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -50,7 +50,7 @@ class PolymericOperatorsVC: ViewController {
         let variable = BehaviorRelay(value: subject1)
         variable.asObservable()
             .concat()
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject2.onNext(2)

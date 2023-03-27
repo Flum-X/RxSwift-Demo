@@ -16,7 +16,7 @@ class ConditionalOperatorsVC: ViewController {
         super.viewDidLoad()
 
         ambTest()
-        takeUntilTest()
+        takeWhileTest()
         takeUntilTest()
         skipWhileTest()
         skipUntilTest()
@@ -33,7 +33,7 @@ class ConditionalOperatorsVC: ViewController {
         subject1
             .amb(subject2)
             .amb(subject3)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         subject2.onNext(1)
@@ -53,7 +53,7 @@ class ConditionalOperatorsVC: ViewController {
         
         Observable.of(2, 3, 4, 5, 6)
             .takeWhile { $0 < 4 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -66,7 +66,7 @@ class ConditionalOperatorsVC: ViewController {
         
         source
             .takeUntil(notifier)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         source.onNext("a")
         source.onNext("b")
@@ -88,7 +88,7 @@ class ConditionalOperatorsVC: ViewController {
         
         Observable.of(2, 3, 4, 5, 6)
             .skipWhile { $0 < 4 }
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
     
@@ -102,7 +102,7 @@ class ConditionalOperatorsVC: ViewController {
          
         source
             .skipUntil(notifier)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          
         source.onNext(1)

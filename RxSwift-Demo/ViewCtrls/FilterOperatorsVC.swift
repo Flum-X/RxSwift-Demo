@@ -31,7 +31,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(2, 30, 22, 5, 60, 3, 40 ,9)
             .filter { $0 > 10 }
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -42,7 +42,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(1, 2, 3, 1, 1, 4)
             .distinctUntilChanged()
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -55,13 +55,13 @@ class FilterOperatorsVC: ViewController {
         Observable.of(1, 2, 3, 4)
             .single { $0 == 2 }
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
         
         Observable.of("A", "B", "C", "D")
             .single()
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -72,7 +72,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(1, 2, 3, 4)
             .elementAt(2)
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -84,7 +84,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(2, 30, 22, 5, 60, 3, 40 ,9)
             .ignoreElements()
             .subscribe{
-                print($0)
+                DLog($0)
             }.disposed(by: disposeBag)
     }
     
@@ -95,7 +95,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(2, 30, 22, 5, 60, 3, 40 ,9)
             .take(3)
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -106,7 +106,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(2, 30, 22, 5, 60, 3, 40 ,9)
             .takeLast(3)
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -117,7 +117,7 @@ class FilterOperatorsVC: ViewController {
         Observable.of(2, 30, 22, 5, 60, 3, 40 ,9)
             .skip(3)
             .subscribe(onNext: {
-                print($0)
+                DLog($0)
             }).disposed(by: disposeBag)
     }
     
@@ -130,7 +130,7 @@ class FilterOperatorsVC: ViewController {
         let notifier = PublishSubject<String>()
         
         source.sample(notifier)
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         
         source.onNext(1)
@@ -179,7 +179,7 @@ class FilterOperatorsVC: ViewController {
                                        scheduler: MainScheduler.instance)
             }
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance) //只发出与下一个间隔超过0.5秒的元素
-            .subscribe(onNext: { print($0) })
+            .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
 }
