@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02C7A6162BEF130900CD3C72 /* APIRxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7A6152BEF130900CD3C72 /* APIRxVC.swift */; };
 		09720185CF4B0FC221CB6B56 /* Pods_RxSwift_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66F697630835670AE997301 /* Pods_RxSwift_Demo.framework */; };
 		2006112624850B2900F8F9CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006112524850B2900F8F9CB /* ViewController.swift */; };
 		2039A2D1246ED781005C4259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039A2D0246ED781005C4259 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02C7A6152BEF130900CD3C72 /* APIRxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRxVC.swift; sourceTree = "<group>"; };
 		2006112524850B2900F8F9CB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2039A2CD246ED781005C4259 /* RxSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2039A2D0246ED781005C4259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				84294630275F094A00249D8C /* CombineOperatorsVC.swift */,
 				847845BB276722C700091A0C /* PolymericOperatorsVC.swift */,
 				847AFA3027689CA000CD2949 /* ConnectOperatorsVC.swift */,
+				02C7A6152BEF130900CD3C72 /* APIRxVC.swift */,
 			);
 			path = ViewCtrls;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844F90E42756046D00C9BBA8 /* ConditionalOperatorsVC.swift in Sources */,
+				02C7A6162BEF130900CD3C72 /* APIRxVC.swift in Sources */,
 				2006112624850B2900F8F9CB /* ViewController.swift in Sources */,
 				846C1B3A271007E8001B9B03 /* CataLogViewCtrl.swift in Sources */,
 				2039A2D1246ED781005C4259 /* AppDelegate.swift in Sources */,
