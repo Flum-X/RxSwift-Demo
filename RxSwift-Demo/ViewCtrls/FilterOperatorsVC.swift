@@ -172,14 +172,14 @@ class FilterOperatorsVC: ViewController {
         ]
         
         //生成对应的 Observable 序列并订阅
-        Observable.from(times)
-            .flatMap { item in
-                return Observable.of(Int(item["value"]!))
-                    .delaySubscription(Double(item["time"]!),
-                                       scheduler: MainScheduler.instance)
-            }
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance) //只发出与下一个间隔超过0.5秒的元素
-            .subscribe(onNext: { DLog($0) })
-            .disposed(by: disposeBag)
+//        Observable.from(times)
+//            .flatMap { item in
+//                return Observable.of(Int(item["value"]!))
+//                    .delaySubscription(Double(item["time"]!),
+//                                       scheduler: MainScheduler.instance)
+//            }
+//            .debounce(.milliseconds(500), scheduler: MainScheduler.instance) //只发出与下一个间隔超过0.5秒的元素
+//            .subscribe(onNext: { DLog($0) })
+//            .disposed(by: disposeBag)
     }
 }
