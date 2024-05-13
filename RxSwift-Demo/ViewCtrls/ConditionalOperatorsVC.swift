@@ -52,7 +52,7 @@ class ConditionalOperatorsVC: ViewController {
     private func takeWhileTest() {
         
         Observable.of(2, 3, 4, 5, 6)
-            .takeWhile { $0 < 4 }
+            .take(while: {$0 < 4})
             .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
@@ -65,7 +65,7 @@ class ConditionalOperatorsVC: ViewController {
         let notifier = PublishSubject<String>()
         
         source
-            .takeUntil(notifier)
+            .take(until: notifier)
             .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
         source.onNext("a")
@@ -87,7 +87,7 @@ class ConditionalOperatorsVC: ViewController {
     private func skipWhileTest() {
         
         Observable.of(2, 3, 4, 5, 6)
-            .skipWhile { $0 < 4 }
+            .skip(while: {$0 < 4})
             .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
     }
@@ -101,7 +101,7 @@ class ConditionalOperatorsVC: ViewController {
         let notifier = PublishSubject<Int>()
          
         source
-            .skipUntil(notifier)
+            .skip(until: notifier)
             .subscribe(onNext: { DLog($0) })
             .disposed(by: disposeBag)
          

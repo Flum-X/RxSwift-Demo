@@ -70,7 +70,7 @@ class FilterOperatorsVC: ViewController {
     private func elementAtTest() {
         
         Observable.of(1, 2, 3, 4)
-            .elementAt(2)
+            .element(at: 2)
             .subscribe(onNext: {
                 DLog($0)
             }).disposed(by: disposeBag)

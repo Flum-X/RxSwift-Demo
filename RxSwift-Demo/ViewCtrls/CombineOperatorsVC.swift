@@ -122,16 +122,16 @@ class CombineOperatorsVC: ViewController {
          
         //将两个请求合并处理
         Observable.zip(userRequest, friendsRequest) {
-                user, friends in
-                //将两个信号合并成一个信号，并压缩成一个元组返回（两个信号均成功）
-                return (user, friends)
-            }
-            .observeOn(MainScheduler.instance) //加这个是应为请求在后台线程，下面的绑定在前台线程。
-            .subscribe(onNext: { (user, friends) in
-                //将数据绑定到界面上
-                //.......
-            })
-            .disposed(by: disposeBag)
+            user, friends in
+            //将两个信号合并成一个信号，并压缩成一个元组返回（两个信号均成功）
+            return (user, friends)
+        }
+        .observe(on: MainScheduler.instance) //加这个是应为请求在后台线程，下面的绑定在前台线程。
+        .subscribe(onNext: { (user, friends) in
+            //将数据绑定到界面上
+            //.......
+        })
+        .disposed(by: disposeBag)
     }
     
     //MARK: combineLatest
